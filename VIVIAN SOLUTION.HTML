@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIVIAN SOLUTIONS</title>
+
+<style>
+:root {
+  --navy: #12334a;
+  --teal: #087f8c;
+  --gold: #f5c451;
+  --light: #f2f8fa;
+  --white: #fff;
+  --text: #263943;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--light);
+}
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 15px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+button, .btn {
+  display: inline-block;
+  background: var(--teal);
+  color: white;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover, .btn:hover {
+  opacity: .88;
+}
+
+.gold-btn {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+section {
+  padding: 60px 7%;
+  scroll-margin-top: 25px;
+}
+
+h1, h2, h3 {
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 14px;
+}
+
+.hero {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, #092b40e8, #092b4070),
+    url("https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.hero h1 {
+  color: white;
+  font-size: clamp(34px, 5vw, 54px);
+  max-width: 750px;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: 18px;
+  color: #f1f7fa;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.intro {
+  max-width: 760px;
+  margin-bottom: 25px;
+}
+
+.light-section {
+  background: #e8f3f6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px #12334a14;
+  border: 1px solid #dce7eb;
+}
+
+.card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 22px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #526570;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.split img {
+  width: 100%;
+  max-height: 370px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+ul {
+  padding-left: 22px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.welcome {
+  background: linear-gradient(120deg, var(--navy), var(--teal));
+  color: white;
+  padding: 28px 7%;
+}
+
+.welcome h2 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.login-page {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  padding: 35px 18px;
+  background: linear-gradient(120deg, #e5f4f5, #f7fafb);
+}
+
+.login-card {
+  width: min(100%, 440px);
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 35px #12334a20;
+}
+
+.login-card h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 13px 0 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c8d7dd;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.small {
+  font-size: 13px;
+  color: #60717c;
+  margin-top: 14px;
+}
+
+.notice {
+  display: none;
+  margin-top: 12px;
+  padding: 10px;
+  background: #fff0ed;
+  color: #8a2418;
+  border-radius: 6px;
+}
+
+.notice.show {
+  display: block;
+}
+
+.faq details {
+  padding: 17px;
+  margin: 12px 0;
+  background: white;
+  border: 1px solid #dce7eb;
+  border-radius: 8px;
+}
+
+.faq summary {
+  color: var(--navy);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.faq details p {
+  margin-top: 12px;
+}
+
+.cta {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+}
+
+.cta h2 {
+  color: white;
+}
+
+footer {
+  background: #092536;
+  color: white;
+  padding: 30px 7%;
+  text-align: center;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 850px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  section {
+    padding: 42px 20px;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">VIVIAN SOLUTIONS</div>
+
+  <nav>
+    <a href="#home" class="site-link">Home</a>
+    <a href="#about" class="site-link">About</a>
+    <a href="#products" class="site-link">Services</a>
+    <a href="#resources" class="site-link">Resources</a>
+    <a href="#help" class="site-link">Get Help</a>
+    <a href="#loginPage" id="loginLink">User Login</a>
+    <button id="logoutButton" hidden>Log Out</button>
+  </nav>
+</header>
+
+<!-- LOGIN PAGE -->
+<section class="login-page" id="loginPage">
+  <form class="login-card" id="loginForm">
+    <h1>Welcome to VIVIAN SOLUTIONS</h1>
+    <p>Log in to access our products, services, and educational resources.</p>
+
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      id="email"
+      placeholder="Enter your email"
+      autocomplete="username"
+      required
+    >
+
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter your password"
+      minlength="4"
+      autocomplete="current-password"
+      required
+    >
+
+    <button type="submit">Log In</button>
+
+    <p class="small">
+      Demonstration login: use a valid-format email and a password
+      of at least four characters. No real account is verified.
+    </p>
+
+    <div id="loginNotice" class="notice" role="alert"></div>
+  </form>
+</section>
+
+<!-- MAIN WEBSITE: OPENS AFTER DEMO LOGIN -->
+<main id="mainSite" hidden>
+
+  <div class="welcome">
+    <h2 id="welcomeHeading">Welcome to VIVIAN SOLUTIONS</h2>
+    <p id="welcomeText">
+      You are now logged in. Explore our products, services,
+      and learning resources below.
+    </p>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Education, Awareness, Prevention and Hope</h1>
+      <p>
+        Learn about substance misuse, healthy choices, prevention,
+        and recovery. We believe that everyone deserves accurate
+        information, dignity, and support.
+      </p>
+
+      <div class="actions">
+        <a href="#products" class="btn gold-btn">Explore Our Services</a>
+        <a href="#help" class="btn">Find Support</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container split">
+      <div>
+        <h2>About Vivian Solutions</h2>
+        <p>
+          Vivian Solutions is an educational awareness website
+          dedicated to sharing information about drugs, substance
+          misuse, prevention, and recovery.
+        </p>
+        <p>
+          Our aim is to help students, families, and communities
+          make informed choices and understand where to seek
+          appropriate professional support.
+        </p>
+        <ul>
+          <li>Drug awareness education</li>
+          <li>Prevention and healthy lifestyle information</li>
+          <li>Family and community support resources</li>
+          <li>Information about treatment and recovery</li>
+        </ul>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85"
+        alt="Young people supporting each other"
+        loading="lazy"
+      >
+    </div>
+  </section>
+
+  <section class="light-section" id="products">
+    <div class="container">
+      <div class="intro">
+        <h2>Our Products and Services</h2>
+        <p>
+          Explore our educational services designed to promote
+          awareness, informed choices, and access to support.
+        </p>
+      </div>
+
+      <div class="grid">
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+            alt="Students learning in a classroom"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <h3>Drug Education</h3>
+            <p>
+              Learn about substance misuse, possible health effects,
+              dependence, and the importance of professional advice.
+            </p>
+            <a class="btn" href="#resources">Learn More</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80"
+            alt="Young people in a group discussion"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <h3>Awareness Campaigns</h3>
+            <p>
+              Support school and community campaigns that encourage
+              informed decisions and healthy activities.
+            </p>
+            <a class="btn" href="#prevention">Learn More</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=900&q=80"
+            alt="Counselor speaking with a client"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <h3>Counseling Information</h3>
+            <p>
+              Understand how qualified counselors and healthcare
+              professionals can help people experiencing difficulties.
+            </p>
+            <a class="btn" href="#help">Find Support</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80"
+            alt="Family and friends spending time together"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <h3>Family Support</h3>
+            <p>
+              Find practical ideas for listening without blame,
+              encouraging treatment, and offering ongoing support.
+            </p>
+            <a class="btn" href="#resources">Read Guidance</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80"
+            alt="People participating in a workshop"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <h3>Community Workshops</h3>
+            <p>
+              Organize educational talks, peer discussions, and
+              community learning sessions with qualified speakers.
+            </p>
+            <a class="btn" href="#contact">Contact Us</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+            alt="Computer and notebook for online learning"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <h3>Learning Materials</h3>
+            <p>
+              Explore awareness topics, classroom discussion ideas,
+              prevention checklists, and educational resources.
+            </p>
+            <a class="btn" href="#resources">View Resources</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="prevention">
+    <div class="container split">
+      <img
+        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85"
+        alt="Friends enjoying positive social activities"
+        loading="lazy"
+      >
+
+      <div>
+        <h2>Drug Misuse Prevention</h2>
+        <p>
+          Prevention includes education, supportive relationships,
+          healthy activities, and access to trustworthy guidance.
+        </p>
+        <ul>
+          <li>Learn the facts from reliable health sources.</li>
+          <li>Practice ways to respond to peer pressure.</li>
+          <li>Seek help from a trusted adult or professional.</li>
+          <li>Take part in sports, arts, clubs, and skills training.</li>
+          <li>Avoid taking medicines other than as directed by a qualified professional.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="light-section" id="resources">
+    <div class="container">
+      <div class="intro">
+        <h2>Educational Resources</h2>
+        <p>General information to help individuals and communities understand substance-related concerns.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-content">
+            <h3>Possible Effects</h3>
+            <p>
+              Substance misuse can affect physical health, emotions,
+              sleep, relationships, learning, and daily responsibilities.
+              Effects vary depending on the substance and individual.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-content">
+            <h3>Treatment and Recovery</h3>
+            <p>
+              Support may include professional assessment, counseling,
+              medical treatment, rehabilitation, and continuing care.
+              Recovery is possible, and each person's needs differ.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-content">
+            <h3>Supporting Someone</h3>
+            <p>
+              Listen respectfully, avoid insults or blame, encourage
+              professional assistance, and seek emergency help if
+              the person is in immediate danger.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="help">
+    <div class="container split">
+      <div>
+        <h2>Get Help and Support</h2>
+        <p>
+          If you or someone you know is struggling with substance use,
+          contact a qualified healthcare professional, counselor,
+          hospital, or licensed treatment service.
+        </p>
+        <p>
+          <strong>Emergency warning:</strong> If someone is unconscious,
+          having a seizure, struggling to breathe, or cannot be awakened
+          after taking a substance, contact local emergency medical
+          services immediately.
+        </p>
+        <p>
+          Seeking help is a positive step. People deserve care,
+          privacy, and respect.
+        </p>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85"
+        alt="Healthcare professional in a clinical setting"
+        loading="lazy"
+      >
+    </div>
+  </section>
+
+  <section class="light-section faq" id="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>Does substance misuse only affect one type of person?</summary>
+        <p>No. Substance-related problems can affect people from many backgrounds. Everyone should be treated with dignity and respect.</p>
+      </details>
+
+      <details>
+        <summary>Can I diagnose someone from their behaviour?</summary>
+        <p>No. Behaviour changes can have many causes. A qualified health professional can help assess concerns.</p>
+      </details>
+
+      <details>
+        <summary>Does this website provide medical treatment?</summary>
+        <p>No. This website provides general education and does not replace diagnosis or treatment by qualified professionals.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container split">
+      <div>
+        <h2>Contact Vivian Solutions</h2>
+        <p>
+          Use this sample form to test the contact section. The demo
+          does not send or save messages.
+        </p>
+        <p class="small">
+          Do not submit private medical information through an
+          unconfigured website form.
+        </p>
+      </div>
+
+      <form class="card card-content" id="contactForm">
+        <label for="contactName">Full Name</label>
+        <input id="contactName" type="text" required>
+
+        <label for="contactEmail">Email Address</label>
+        <input id="contactEmail" type="email" required>
+
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" rows="4" required></textarea>
+
+        <button class="btn" type="submit">Submit Message</button>
+        <p id="contactNotice" class="small" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="cta" style="background:#12334a;color:white;text-align:center">
+    <div class="container">
+      <h2 style="color:white">Your Health. Your Future. Your Choice.</h2>
+      <p>Promoting knowledge, prevention, compassion, and hope.</p>
+      <a class="btn gold-btn" href="#products">Explore Our Services</a>
+    </div>
+  </section>
+
+  <footer style="background:#092536;color:white;text-align:center;padding:28px 20px">
+    <strong>VIVIAN SOLUTIONS</strong>
+    <p>Drug awareness • Prevention • Education • Recovery</p>
+    <p class="small" style="color:#d2e0e7">
+      © <span id="year"></span> Vivian Solutions. Educational content only;
+      not a substitute for professional medical advice.
+    </p>
+  </footer>
+
+</main>
+
+<script>
+  const loginPage = document.getElementById("loginPage");
+  const mainSite = document.getElementById("mainSite");
+  const loginForm = document.getElementById("loginForm");
+  const loginNotice = document.getElementById("loginNotice");
+  const loginLink = document.getElementById("loginLink");
+  const logoutButton = document.getElementById("logoutButton");
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  loginForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || password.length < 4) {
+      loginNotice.textContent = "Please enter a valid email and a password of at least four characters.";
+      loginNotice.classList.add("show");
+      return;
+    }
+
+    const username = email.split("@")[0];
+    document.getElementById("welcomeHeading").textContent =
+      "Welcome to VIVIAN SOLUTIONS, " + username + "!";
+    document.getElementById("welcomeText").textContent =
+      "You are now logged in to the demo. Explore our products, services, and learning resources below.";
+
+    loginPage.hidden = true;
+    mainSite.hidden = false;
+    loginLink.hidden = true;
+    logoutButton.hidden = false;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  logoutButton.addEventListener("click", function() {
+    mainSite.hidden = true;
+    loginPage.hidden = false;
+    loginLink.hidden = false;
+    logoutButton.hidden = true;
+    loginForm.reset();
+    loginNotice.classList.remove("show");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  loginLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    mainSite.hidden = true;
+    loginPage.hidden = false;
+    loginLink.hidden = false;
+    logoutButton.hidden = true;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    document.getElementById("contactNotice").textContent =
+      "Demo only: your message was not sent or stored. A backend or form service is required to receive messages.";
+    this.reset();
+  });
+</script>
+</body>
+</html>
